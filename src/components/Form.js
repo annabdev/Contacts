@@ -13,7 +13,7 @@ class Form extends Component {
   handleSubmit = async e => {
       e.preventDefault();
       const data = JSON.stringify(this.state);
-      await fetch("http://localhost:4000", {
+      await fetch("https://nameless-hollows-78371.herokuapp.com/", {
           method: "POST",
           body: data,
           headers: {

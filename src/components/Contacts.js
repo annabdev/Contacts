@@ -14,7 +14,7 @@ class Contacts extends Component {
     handleUpdate = async (e, _id) => {
         e.preventDefault();
         const update = JSON.stringify(this.state);
-        await fetch("http://localhost:4000/" + _id, {
+        await fetch("https://nameless-hollows-78371.herokuapp.com/" + _id, {
             method: "PUT",
             body: update,
             headers: {
@@ -26,7 +26,7 @@ class Contacts extends Component {
 
     //Delete
     handleDelete = async _id => {
-        await fetch("http://localhost:4000/" + _id, {
+        await fetch("https://nameless-hollows-78371.herokuapp.com/" + _id, {
             method: "DELETE"
         });
         await this.getContacts();
@@ -34,7 +34,7 @@ class Contacts extends Component {
 
     //Get "Read"
     getContacts = async () => {
-        return fetch("http://localhost:4000")
+        return fetch("https://nameless-hollows-78371.herokuapp.com/")
         .then(results => {
             return results.json();
         })
